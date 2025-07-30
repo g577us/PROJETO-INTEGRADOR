@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doçura - Confeitaria Artesanal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        } */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/bandeija.jfif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .floating-button {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #img-logo {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 120px;
+        }
+
+        #contact{
+            background-color: #D49784;
+        }
+
+        .corDeFundo{
+            color: #D49784;
+        }
+        .corDeFundo2{
+            color: #EED1A7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-amber-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-amber-800 hover:text-amber-600 transition">
+                        <!-- <i class="fas fa-cookie-bite mr-2"></i>Doçura -->
+                        <img id="img-logo" src="./img/Doce_Atelier-Logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-amber-800 hover:text-amber-600 transition font-medium">Início</a>
+                    <a href="produtos.html"
+                        class="text-amber-800 hover:text-amber-600 transition font-medium">Produtos</a>
+                    <a href="#about" class="text-amber-800 hover:text-amber-600 transition font-medium">Sobre Nós</a>
+                    <a href="#contact" class="text-amber-800 hover:text-amber-600 transition font-medium">Contato</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-amber-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#home" class="block py-2 text-amber-800 hover:text-amber-600 transition">Início</a>
+                <a href="produtos.html" class="block py-2 text-amber-800 hover:text-amber-600 transition">Produtos</a>
+                <a href="#about" class="block py-2 text-amber-800 hover:text-amber-600 transition">Sobre Nós</a>
+                <a href="#contact" class="block py-2 text-amber-800 hover:text-amber-600 transition">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero pt-32 pb-20 md:pt-40 md:pb-32 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Doçuras que encantam</h1>
+            <p class="text-xl md:text-2xl mb-8">Confeitaria artesanal feita com amor e ingredientes selecionados</p>
+            <a href="#products"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition inline-block">
+                Nossos Produtos
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-amber-800 mb-12">Nossas Delícias</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="./img/cake_oreo.jpeg"
+                            alt="Bolo de chocolate" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-0 right-0 bg-amber-600 text-white px-3 py-1 m-2 rounded-full text-sm font-semibold">
+                            Mais vendido
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Bolo Oreo:</h3>
+                        <p class="text-gray-600 mb-4">Massa amanteigada , recheio de ninho cremoso e finalizada com biscoito Oreo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold text-lg">R$ 20,00</span>
+                            <button
+                                class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition">
+                                <i class="fas fa-shopping-cart"></i> Encomendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="./img/cake_red.jpeg"
+                            alt="Cupcakes" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Mini Redvelvet:</h3>
+                        <p class="text-gray-600 mb-4">Massa redvelvet amanteigada recheio de geleia de morango artesanal , recheio de ninho cremoso finalizado com morango fresco.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold text-lg">R$ 20,00</span>
+                            <button
+                                class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition">
+                                <i class="fas fa-shopping-cart"></i> Encomendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="./img/brigadeiro_ferreiro.jfif"
+                            alt="Macarons" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Brigadeiro ferrero rocher:</h3>
+                        <p class="text-gray-600 mb-4">Brigadeiro chocolate meio amargo , amendoim e finalizado com nutella.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold text-lg">R$ 10,00</span>
+                            <button
+                                class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition">
+                                <i class="fas fa-shopping-cart"></i> Encomendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="produtos.html"
+                    class="inline-block border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-bold py-3 px-8 rounded-full transition">
+                    Ver Todos os Produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-amber-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Nossa cozinha" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-amber-800 mb-6">Nossa História</h2>
+                    <p class="text-gray-700 mb-4">
+                        Fundada em 2010 por Maria Silva, a Doçura nasceu do amor pela confeitaria tradicional. O que
+                        começou como um hobby na cozinha de casa se transformou em uma das confeitarias mais queridas da
+                        região.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Nossos produtos são feitos artesanalmente, com ingredientes selecionados e sem conservantes.
+                        Cada doce é preparado com cuidado e atenção aos detalhes, garantindo qualidade e sabor
+                        incomparáveis.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Visamos não apenas satisfazer o paladar, mas criar experiências memoráveis através de nossos
+                        doces. Cada mordida deve trazer alegria e conforto, como um abraço em forma de doce.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow">
+                            <i class="fas fa-award text-amber-600 mr-2"></i>
+                            <span>Qualidade Garantida</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow">
+                            <i class="fas fa-heart text-amber-600 mr-2"></i>
+                            <span>Feito com Amor</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow">
+                            <i class="fas fa-leaf text-amber-600 mr-2"></i>
+                            <span>Ingredientes Naturais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-amber-800 mb-12">O que dizem nossos clientes</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-800">Ana Carolina</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "O bolo de chocolate da Doçura foi o destaque da festa do meu filho! Todos elogiaram e pediram o
+                        contato. Super recomendo!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Cliente"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-800">Ricardo Almeida</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "Sempre encomendo os docinhos para eventos na empresa. São lindos, deliciosos e o atendimento é
+                        impecável. Parabéns pelo trabalho!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-800">Juliana Santos</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "Os macarons são divinos! A textura perfeita e os sabores surpreendentes. Minha filha adorou o
+                        kit que encomendamos para seu aniversário."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-amber-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl font-bold mb-6">Entre em Contato</h2>
+                    <p class="mb-6">
+                        Faça sua encomenda ou tire suas dúvidas. Estamos sempre felizes em ajudar!
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-4 text-amber-300"></i>
+                            <div>
+                                <h4 class="font-bold">Endereço</h4>
+                                <p>Rua das Delícias, 123 - Centro<br>Quixadá/CE</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-4 text-amber-300"></i>
+                            <div>
+                                <h4 class="font-bold">Telefone</h4>
+                                <p>(88) 99768-8515</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4 text-amber-300"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p>contato@doceatelier.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-4 text-amber-300"></i>
+                            <div>
+                                <h4 class="font-bold">Horário de Funcionamento</h4>
+                                <p>Segunda a Sexta: 9h às 19h<br>Sábado: 9h às 15h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Siga-nos</h4>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/doceatelierbo?igsh=Y3JwYjB6MjludmE0"
+                                class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form class="bg-white rounded-lg shadow-lg p-6 text-gray-800">
+                        <h3 class="text-xl font-bold corDeFundo mb-4">Envie sua mensagem</h3>
+
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Telefone</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition floating-button">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 flex flex-col items-center md:items-center">
+                    <a href="#" class="text-2xl font-bold text-white hover:text-amber-200 transition">
+                        <!-- <i class="fas fa-cookie-bite mr-2"></i>Doçura -->
+                         <img id="img-logo" src="img/Doce_Atelier-Logo-PB.png" alt="">
+                         
+                    </a>
+                    <p class="mt-2 text-white">Confeitaria Artesanal</p>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end">
+                    <p>&copy; 2025 Doce Atelier. Todos os direitos reservados.</p>
+                    <p class="text-amber-200">Feito com <i class="fas fa-heart text-red-400"></i> no SENAC</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // Product card hover effect
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('transform');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('transform');
+            });
+        });
+    </script>
+</body>
+
+</html>
